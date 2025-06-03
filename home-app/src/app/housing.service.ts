@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'; //decorator makes the class available for dependency injection, so it can be used in components.
 import { HousingLocation } from './housing-location';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' // makes it available throughout the app
 })
-export class HousingService {
+export class HousingService {  //The service has a property housingLocationList which holds an array of housing data
   protected housingLocationList: HousingLocation[]=[
     {
       id: 0,
