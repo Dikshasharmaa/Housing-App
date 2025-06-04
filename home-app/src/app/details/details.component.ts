@@ -14,6 +14,14 @@ import { HousingLocation } from '../housing-location';
         <h2 class="listing-heading">{{housingLocation?.name}}</h2>
         <p class ="listing-location">{{housingLocation?.city}}, {{housingLocation?.state}}</p>
         </section>
+        <section class ="listing-features">
+          <h2 class ="section-heading">About this housing location</h2>
+          <ul>
+            <li>Units available: {{housingLocation?.availableUnits}}</li>
+            <li>Does this location have wifi: {{housingLocation?.wifi}}</li>
+            <li>Does this location have laundry: {{housingLocation?.laundry}}</li>
+            </ul>
+        </section>
     </article>    
 
 
@@ -22,7 +30,6 @@ import { HousingLocation } from '../housing-location';
 })
 export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
-  housingLocationId = 0;
   housingService = inject(HousingService);
   housingLocation: HousingLocation | undefined;
 
