@@ -26,7 +26,8 @@ export class HomeComponent {
   filteredLocationList:HousingLocation[]=[];
 
   constructor(){  // inject the service
-    this.housingLocationList = this.housingService.getAllHousingLocations();
+    this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[])=>
+    {this.housingLocationList = housingLocationList});
     this.filteredLocationList = this.housingLocationList;
   }
   filterResults(text:string){
